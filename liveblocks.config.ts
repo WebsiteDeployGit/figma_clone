@@ -12,8 +12,8 @@ const client = createClient({
 // `user.presence` property. Must be JSON-serializable.
 export type Presence = {
   cursor: { x: number, y: number } | null,
-  message: string | null;
-  cursorColor: string |null , editingText: string | null
+  cursorColor: string |null , 
+  editingText: string | null
 };
 
 // Optionally, Storage represents the shared document that persists in the
