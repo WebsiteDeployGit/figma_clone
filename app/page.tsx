@@ -25,7 +25,7 @@ export default function Page() {
 
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const fabricRef = useRef<fabric.Canvas | null>(null);
+  const fabricRef = useRef<fabric.Canvas| null>(null);
   const isDrawing = useRef(false);
   const shapeRef = useRef<fabric.Object | null>(null);
   const selectedShapeRef = useRef<string | null>(null);
@@ -67,8 +67,8 @@ export default function Page() {
     if(!canvasObjects || canvasObjects.size ===0)
       return true;
     
-    for(const [key , value] of canvasObjects.entries()){
-      canvasObjects.delete(key)
+    for (const [key, value] of canvasObjects.entries()) {
+      canvasObjects.delete(key);
     }
 
     return canvasObjects.size === 0;
@@ -172,8 +172,10 @@ export default function Page() {
     })
 
     window.addEventListener("resize", () => {
-      handleResize({ fabricRef })
-    })
+      handleResize({
+        canvas: fabricRef.current,
+      });
+    });
 
     window.addEventListener("keydown" , (e: any) => {
       handleKeyDown({
