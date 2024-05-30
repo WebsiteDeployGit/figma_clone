@@ -79,9 +79,9 @@ const OverlayThread = ({ thread, maxZIndex }: OverlayThreadProps) => {
       ref={threadRef}
       id={`thread-${thread.id}`}
       className="absolute left-0 top-0 flex gap-5"
-      style={{
-        transform: `translate(${thread.metadata.x}px, ${thread.metadata.y}px)`,
-      }}
+      // style={{
+      //   transform: `translate(${.x}px, ${thread.metadata.y}px)`,
+      // }}
     >
       {/* render the thread */}
       <PinnedThread thread={thread} onFocus={handleIncreaseZIndex} />
